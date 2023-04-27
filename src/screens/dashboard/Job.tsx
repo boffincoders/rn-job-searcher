@@ -13,7 +13,7 @@ interface IJob {
 const Job = (props: IJob) => {
   const {company, location, position, splitPackage, timing, title} = props;
   return (
-    <TalView className="bg-white shadow-md p-5 mt-5 rounded-xl">
+    <TalView className="bg-white shadow-md p-5 mt-5 rounded-xl mb-2">
       <TalView className="flex flex-row justify-between items-center">
         <TalView className="flex flex-row items-center">
           <TalView className="rounded-full bg-[#D6CDFE] p-2">

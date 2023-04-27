@@ -13,7 +13,7 @@ const Description = () => {
         illo inventore veritatis et quasi architecto beatae vitae dicta sunt
         explicabo. Nemo enim ipsam voluptatem ...
       </TalText>
-      <TalView className="mt-3 bg-[#7551FF] opacity-20 w-20 p-1 rounded-md">
+      <TalView className="mt-3 bg-[#7551FF] opacity-20 w-1/6 p-1 rounded-md">
         <TalText className="text-black text-center">Read more</TalText>
       </TalView>
       <TalText className="text-primary mt-5">Requirements</TalText>
@@ -51,11 +51,17 @@ const Description = () => {
         <TalText className="mt-4 text-xs text-[#524B6B]">
           Overlook Avenue, Belleville, NJ, USA
         </TalText>
-        <Image
-          style={{width: 370, height: 200, marginTop: 10}}
+        {/* <Image
+          // style={{width: 370, height: 200, marginTop: 10}}
           source={{
             uri: 'https://maps.googleapis.com/maps/api/staticmap?size=600x400&markers=icon%3Ahttp%3A%2F%2Fwww.google.com%2Fmapfiles%2Farrow.png%7C30.7046%2C76.7179&zoom=5visible=30.7046v.7179%7C41.469576%2C2.22801&apiKey=AIzaSyDztlrk_3CnzGHo7CFvLFqE_2bUKEq1JEU&key=AIzaSyCKpqPU_-4Iow5OqZ2O6JlRhj9adbhC64g',
           }}
+        /> */}
+      </TalView>
+      <TalView className="w-full mt-4">
+        <Image
+          style={{width: '100%', borderRadius: 5}}
+          source={require('../../../assets/images/Map.png')}
         />
       </TalView>
       <TalText className="text-primary text-sm font-bold mt-3">

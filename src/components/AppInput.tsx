@@ -12,15 +12,17 @@ const AppInput = ({
   secureTextEntry,
   multiline,
   numberOfLines,
+  style,
 }: IAppInput) => {
   return (
-    <TalView className="w-full py-2">
+    <TalView className="py-2">
       <TalText className="text-justify text-primary">{label}</TalText>
       <TalTextInput
+        style={style}
         multiline={multiline}
         numberOfLines={numberOfLines}
         secureTextEntry={secureTextEntry}
-        className="rounded-md py-2 w-80 bg-white mt-2"
+        className="rounded-md py-2 w-full bg-white mt-2"
       />
     </TalView>
   );

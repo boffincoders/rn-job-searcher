@@ -1,10 +1,9 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
-import {Image, Pressable, ScrollView} from 'react-native';
+import {Image, Pressable, ScrollView, TouchableOpacity} from 'react-native';
 import {TalText} from '../../components/TalwindText';
 import {TalView} from '../../components/TalwindView';
 import Job from './Job';
-
 const Home = () => {
   const navigation: any = useNavigation();
   const [jobs] = useState([
@@ -16,11 +15,35 @@ const Home = () => {
       position: 'Senior designer',
       timing: 'Full time',
     },
+    {
+      title: 'Product Designer',
+      company: 'Google inc',
+      location: 'California, USA',
+      package: '$15k/Mo',
+      position: 'Senior designer',
+      timing: 'Full time',
+    },
+    {
+      title: 'Product Designer',
+      company: 'Google inc',
+      location: 'California, USA',
+      package: '$15k/Mo',
+      position: 'Senior designer',
+      timing: 'Full time',
+    },
+    {
+      title: 'Product Designer',
+      company: 'Google inc',
+      location: 'California, USA',
+      package: '$15k/Mo',
+      position: 'Senior designer',
+      timing: 'Full time',
+    },
   ]);
   return (
     <ScrollView>
-      <TalView className="d-flex flex-1 px-4">
-        <TalView className="d-flex justify-between items-center flex-row p-3 font-bold">
+      <TalView className="flex flex-1 px-4">
+        <TalView className="flex justify-between items-center flex-row p-3 font-bold">
           <TalView>
             <TalText className="text-primary text-xl font-semibold">
               Hello
@@ -29,18 +52,36 @@ const Home = () => {
               Orlando Diggs.
             </TalText>
           </TalView>
-          <Image
-            source={require('../../assets/images/profile.png')}
-            style={{height: 30, width: 30, borderRadius: 50}}
-          />
+          <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+            <Image
+              source={require('../../assets/images/profile.png')}
+              style={{height: 30, width: 30, borderRadius: 50}}
+            />
+          </TouchableOpacity>
         </TalView>
-        <TalView className="">
+        <TalView className=" bg-primary rounded flex flex-row justify-between items-center px-6">
+          <TalView className="hidden md:flex">
+            <TalText className="sm:text-xs text-white text-2xl">
+              50% off
+            </TalText>
+            <TalText className="sm:text-xs text-white text-lg">
+              take any courses
+            </TalText>
+            <TalView className="bg-[#FF9228] rounded-lg p-2 mt-3">
+              <TalText className="text-center sm:text-xs text-white">
+                Join now
+              </TalText>
+            </TalView>
+          </TalView>
           <Image
-            style={{width: '100%', borderRadius: 5}}
+            style={{
+              position: 'relative',
+              zIndex: 1,
+            }}
             source={require('../../assets/images/discounthome.png')}
           />
-          <TalText className="text-black mt-4 font-bold">Find Your job</TalText>
         </TalView>
+        <TalText className="text-black mt-4 font-bold">Find Your job</TalText>
         <TalView className="gap-3 mt-1 flex flex-row items-center overflow-hidden">
           <TalView className="py-10 flex flex-1 items-center bg-[#AFECFE] rounded">
             <Image source={require('../../assets/images/findjobs.png')} />

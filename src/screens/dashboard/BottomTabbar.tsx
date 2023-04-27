@@ -38,7 +38,7 @@ const BottomTabBar = (props: BottomTabBarProps) => {
             source={require('../../assets/images/add.png')}
           />
         );
-      case 'Chat':
+      case 'Messages':
         return (
           <Image
             style={{
@@ -49,7 +49,7 @@ const BottomTabBar = (props: BottomTabBarProps) => {
             source={require('../../assets/images/message.png')}
           />
         );
-      case 'Draft':
+      case 'SaveJobs':
         return (
           <Image
             style={{
