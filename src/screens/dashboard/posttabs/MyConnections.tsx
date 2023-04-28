@@ -4,8 +4,8 @@ import {TalText} from '../../../components/TalwindText';
 import {TalView} from '../../../components/TalwindView';
 const MyConnections = () => {
   return (
-    <TalView className="flex-1 px-2">
-      <ScrollView>
+    <TalView className="flex-1 px-2 mb-2">
+      <ScrollView style={{flex: 1}}>
         <TalView className="gap-3 mt-1 flex flex-row items-center overflow-hidden">
           <TalView className="bg-white rounded-2xl justify-center items-center py-5 mt-3 flex-1">
             <TalView className="bg-[#FFD500] items-center justify-center rounded-full py-3 px-3.5">

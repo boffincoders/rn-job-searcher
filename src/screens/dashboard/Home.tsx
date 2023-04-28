@@ -1,6 +1,12 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useState} from 'react';
-import {Image, Pressable, ScrollView, TouchableOpacity} from 'react-native';
+import {
+  Image,
+  ImageBackground,
+  Pressable,
+  ScrollView,
+  TouchableOpacity,
+} from 'react-native';
 import {TalText} from '../../components/TalwindText';
 import {TalView} from '../../components/TalwindView';
 import Job from './Job';
@@ -41,9 +47,9 @@ const Home = () => {
     },
   ]);
   return (
-    <ScrollView>
-      <TalView className="flex flex-1 px-4">
-        <TalView className="flex justify-between items-center flex-row p-3 font-bold">
+    <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
+      <TalView className="flex flex-1 px-4 mt-2">
+        <TalView className="flex justify-between items-center  flex-row font-bold">
           <TalView>
             <TalText className="text-primary text-xl font-semibold">
               Hello
@@ -59,27 +65,28 @@ const Home = () => {
             />
           </TouchableOpacity>
         </TalView>
-        <TalView className=" bg-primary rounded flex flex-row justify-between items-center px-6">
-          <TalView className="hidden md:flex">
-            <TalText className="sm:text-xs text-white text-2xl">
-              50% off
-            </TalText>
-            <TalText className="sm:text-xs text-white text-lg">
-              take any courses
-            </TalText>
-            <TalView className="bg-[#FF9228] rounded-lg p-2 mt-3">
-              <TalText className="text-center sm:text-xs text-white">
-                Join now
-              </TalText>
+        <TalView className="mt-4 bg-primary rounded flex flex-row justify-between items-center px-6">
+          <ImageBackground
+            resizeMode="cover"
+            style={{flex: 1, paddingVertical: 20}}
+            source={require('../../assets/images/discounthome.png')}>
+            <TalView className="flex flex-row justify-between items-center">
+              <TalView className="relative z-10">
+                <TalText className="sm:text-xs text-white text-2xl">
+                  50% off
+                </TalText>
+                <TalText className="sm:text-xs text-white text-lg">
+                  take any courses
+                </TalText>
+                <TalView className="bg-[#FF9228] w-20 rounded-lg p-2 mt-3">
+                  <TalText className="text-center sm:text-xs text-white">
+                    Join now
+                  </TalText>
+                </TalView>
+              </TalView>
+              <TalView />
             </TalView>
-          </TalView>
-          <Image
-            style={{
-              position: 'relative',
-              zIndex: 1,
-            }}
-            source={require('../../assets/images/discounthome.png')}
-          />
+          </ImageBackground>
         </TalView>
         <TalText className="text-black mt-4 font-bold">Find Your job</TalText>
         <TalView className="gap-3 mt-1 flex flex-row items-center overflow-hidden">

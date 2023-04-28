@@ -1,12 +1,12 @@
 import {useNavigation} from '@react-navigation/native';
-import React, {useState} from 'react';
+import React, {useRef, useState} from 'react';
 import {
   Image,
   ImageBackground,
-  ImageEditor,
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
+import BackButton from '../../components/backButton';
 import {TalText} from '../../components/TalwindText';
 import {TalView} from '../../components/TalwindView';
 import AddSkills from './addSkillCard';
@@ -39,6 +39,8 @@ const Profile = () => {
       icon: require('../../assets/images/resume.png'),
     },
   ]);
+
+  const ref = useRef<any>(null);
   return (
     <ScrollView>
       <TalView className="flex-1">
@@ -54,8 +56,19 @@ const Profile = () => {
             source={require('../../assets/images/headBack.png')}
             resizeMode="cover">
             <TalView className="flex flex-row justify-between items-center">
-              <TalText />
+              <TouchableOpacity onPress={() => navigation.goBack()}>
+                <Image
+                  style={{tintColor: 'white'}}
+                  source={require('../../assets/images/arrow.png')}
+                />
+              </TouchableOpacity>
               <TalView className="w-1/4 flex flex-row justify-around">
+                <TouchableOpacity
+                  onPress={() => navigation.navigate('Notifications')}>
+                  <Image
+                    source={require('../../assets/images/notificationIcon.png')}
+                  />
+                </TouchableOpacity>
                 <Image
                   style={{tintColor: 'white'}}
                   source={require('../../assets/images/share.png')}
@@ -66,7 +79,7 @@ const Profile = () => {
                 </TouchableOpacity>
               </TalView>
             </TalView>
-            <TalView>
+            <TalView className="mt-1">
               <Image
                 source={require('../../assets/images/profile.png')}
                 style={{height: 40, width: 40, borderRadius: 50}}

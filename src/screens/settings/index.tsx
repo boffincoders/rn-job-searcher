@@ -1,21 +1,43 @@
 import {useNavigation} from '@react-navigation/native';
 import React, {useRef, useState} from 'react';
 import {Image, TouchableOpacity} from 'react-native';
-import BottomSheet from 'react-native-simple-bottom-sheet';
+import RBSheet from 'react-native-raw-bottom-sheet';
 import SwitchToggle from 'react-native-switch-toggle';
+import AppButton from '../../components/AppButton';
 import BackButton from '../../components/backButton';
+import LoginWithGoogleButton from '../../components/LoginWithGoogleButton';
 import {TalText} from '../../components/TalwindText';
 import {TalView} from '../../components/TalwindView';
 const Settings = () => {
   const [notification, setNotification] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const navigation: any = useNavigation();
-  const [bottomSheet, setBottomSheet] = useState(false);
+
+  const ref = useRef<any>(null);
   return (
     <TalView className="flex-1">
-      <BottomSheet onClose={() => setBottomSheet(false)} isOpen={bottomSheet}>
-        <TalText style={{paddingVertical: 20}}>Some random content</TalText>
-      </BottomSheet>
+      <RBSheet
+        closeOnDragDown={true}
+        closeOnPressMask={true}
+        ref={ref}
+        height={300}
+        openDuration={250}>
+        <TalView className="flex-1 justify-center items-center">
+          <TalText className="text-primary font-semibold text-md mt-2">
+            Log out
+          </TalText>
+          <TalText className="text-[#524B6B] text-xs mt-5">
+            Are you sure you want to leave?
+          </TalText>
+
+          <TalView className="mt-2">
+            <AppButton title={'Yes'} />
+          </TalView>
+          <TalView className="mt-2">
+            <LoginWithGoogleButton title="Cancel" googleIcon={false} />
+          </TalView>
+        </TalView>
+      </RBSheet>
       <TalView className="p-3">
         <BackButton />
         <TalText className="text-primary text-lg mt-7 font-semibold">
@@ -85,7 +107,7 @@ const Settings = () => {
               <Image source={require('../../assets/images/logout.png')} />
               <TalText className="ml-2">Logout</TalText>
             </TalView>
-            <TouchableOpacity onPress={() => setBottomSheet(true)}>
+            <TouchableOpacity onPress={() => ref.current.open()}>
               <Image source={require('../../assets/images/rightarrow.png')} />
             </TouchableOpacity>
           </TalView>

@@ -1,14 +1,12 @@
-import {useNavigation} from '@react-navigation/native';
 import React from 'react';
 import {Image, ScrollView, TextInput} from 'react-native';
 import BackButton from '../../components/backButton';
 import {TalText} from '../../components/TalwindText';
 import {TalView} from '../../components/TalwindView';
 const Chat = () => {
-  const navigation = useNavigation();
   return (
     <TalView className="flex-1">
-      <TalView className="bg-white py-5">
+      <TalView className="bg-white py-2">
         <TalView className="flex flex-row justify-between items-center p-2">
           <BackButton />
           <Image source={require('../../assets/images/menu.png')} />
@@ -38,7 +36,10 @@ const Chat = () => {
           </TalView>
         </TalView>
       </TalView>
-      <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        keyboardShouldPersistTaps={'always'}
+        style={{flex: 1}}
+        showsVerticalScrollIndicator={false}>
         <TalView className="p-3">
           <TalText className="text-center text-xs text-[#AAA6B9]">
             Today
@@ -130,19 +131,18 @@ const Chat = () => {
           </TalView>
         </TalView>
       </ScrollView>
-      <TalView className="flex flex-row items-center m-2 justify-between">
-        <TalView className="flex flex-row bg-white p-3 rounded-2xl m-2 ">
+      <TalView className="flex flex-row items-center m-2 justify-between ">
+        <TalView className="flex flex-row items-center flex-1 bg-white p-3 rounded-2xl">
           <Image source={require('../../assets/images/attachment.png')} />
           <TextInput
             placeholder="Write your message"
             style={{
               backgroundColor: 'white',
-              padding: 3,
-              width: '80%',
+              padding: 2,
             }}
           />
         </TalView>
-        <TalView className="bg-primary text-center p-3 rounded-lg">
+        <TalView className="bg-primary text-center p-3 rounded-lg ml-2">
           <Image source={require('../../assets/images/send.png')} />
         </TalView>
       </TalView>

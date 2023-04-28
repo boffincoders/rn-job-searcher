@@ -38,16 +38,15 @@ const SaveJobs = () => {
 
   return (
     <TalView className="flex flex-1">
-      <TalView className="flex w-full flex-row justify-between items-center p-2">
-        <TalText />
-        <TalText />
+      {/* <TalView className="flex w-full flex-row justify-between items-center p-2">
+        <TalView />
         <TalText className="text-[#150B3D] font-bold text-lg text-center">
           Save Jobs
         </TalText>
         <TalView>
           <TalText className="text-xs text-[#FF9228]">Delete all</TalText>
         </TalView>
-      </TalView>
+      </TalView> */}
       <ScrollView>
         <TalView className="p-2">
           {jobs.map((x, i) => {

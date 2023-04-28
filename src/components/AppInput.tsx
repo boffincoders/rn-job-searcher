@@ -15,7 +15,7 @@ const AppInput = ({
   style,
 }: IAppInput) => {
   return (
-    <TalView className="py-2">
+    <>
       <TalText className="text-justify text-primary">{label}</TalText>
       <TalTextInput
         style={style}
@@ -24,7 +24,7 @@ const AppInput = ({
         secureTextEntry={secureTextEntry}
         className="rounded-md py-2 w-full bg-white mt-2"
       />
-    </TalView>
+    </>
   );
 };
 

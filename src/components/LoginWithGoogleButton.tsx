@@ -12,7 +12,7 @@ const LoginWithGoogleButton = ({
 }) => {
   return (
     <TouchableOpacity>
-      <TalView className="w-80 p-3 items-center justify-center rounded flex-row bg-googlecolor">
+      <TalView className="w-60 p-3 items-center justify-center rounded flex-row bg-googlecolor">
         {googleIcon ? (
           <Image source={require('../assets/images/google.png')} />
         ) : null}

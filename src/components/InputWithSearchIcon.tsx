@@ -2,13 +2,14 @@ import React from 'react';
 import {Image, TextInput} from 'react-native';
 import {TalView} from './TalwindView';
 
-const InputWithSearchIcon = ({clear}: {clear: boolean}) => {
+const InputWithSearchIcon = ({clear}: {clear?: boolean}) => {
   return (
-    <TalView className="flex flex-row bg-white p-3 rounded-2xl">
+    <TalView className="flex flex-row items-center bg-white p-3 rounded-2xl">
       <Image source={require('../assets/images/search.png')} />
       <TextInput
         placeholder="Search messages"
         style={{
+          width: '100%',
           backgroundColor: 'white',
           flex: 1,
           padding: 3,

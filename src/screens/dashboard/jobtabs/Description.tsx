@@ -13,7 +13,7 @@ const Description = () => {
         illo inventore veritatis et quasi architecto beatae vitae dicta sunt
         explicabo. Nemo enim ipsam voluptatem ...
       </TalText>
-      <TalView className="mt-3 bg-[#7551FF] opacity-20 w-1/6 p-1 rounded-md">
+      <TalView className="mt-3 w-20 bg-[#7551FF] bg-opacity-20 p-1 rounded-md">
         <TalText className="text-black text-center">Read more</TalText>
       </TalView>
       <TalText className="text-primary mt-5">Requirements</TalText>

@@ -27,12 +27,13 @@ import Resume from '../../screens/profile/Resume';
 import Skills from '../../screens/profile/Skills';
 import Settings from '../../screens/settings';
 import UpdatePassword from '../../screens/auth/UpdatePassword';
-import {useColorScheme} from 'react-native';
+import Notifications from '../../screens/profile/Notifications';
+import NotificationDetails from '../../screens/profile/NotificationDetails';
+import {StatusBar} from 'react-native';
 
 const Routes = () => {
   const Stack = createNativeStackNavigator();
   const [splashScreen, setSplashScreen] = useState<boolean>(true);
-  const theme = useColorScheme();
 
   useEffect(() => {
     setTimeout(() => {
@@ -42,6 +43,12 @@ const Routes = () => {
   return (
     <SafeAreaProvider>
       <SafeAreaView style={{flex: 1}}>
+        <StatusBar
+          animated={true}
+          backgroundColor="#ff00ff00"
+          networkActivityIndicatorVisible
+          barStyle={'dark-content'}
+        />
         <NavigationContainer>
           <Stack.Navigator screenOptions={{headerShown: false}}>
             {splashScreen ? (
@@ -82,6 +89,11 @@ const Routes = () => {
                 <Stack.Screen name="AddResume" component={Resume} />
                 <Stack.Screen name="AddSkills" component={Skills} />
                 <Stack.Screen name="Settings" component={Settings} />
+                <Stack.Screen name="Notifications" component={Notifications} />
+                <Stack.Screen
+                  name="NotificationDetails"
+                  component={NotificationDetails}
+                />
                 <Stack.Screen
                   name="UpdatePassword"
                   component={UpdatePassword}

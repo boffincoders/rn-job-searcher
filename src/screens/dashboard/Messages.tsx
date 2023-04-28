@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Image, ScrollView, TextInput} from 'react-native';
+import {Image, ScrollView} from 'react-native';
 import InputWithSearchIcon from '../../components/InputWithSearchIcon';
 import MessageItem from '../../components/messageItem';
 import {TalText} from '../../components/TalwindText';
@@ -64,23 +64,15 @@ const Messages = () => {
   ]);
   return (
     <TalView className="flex-1">
-      {/* <TalView className="flex w-full flex-row items-center"> */}
-      <TalText className="text-black font-bold text-lg text-center">
-        Messages
-      </TalText>
-      <TalView className="flex flex-row self-end">
-        <Image source={require('../../assets/images/edit.png')} />
-        <Image
-          style={{marginLeft: 15}}
-          source={require('../../assets/images/menu.png')}
-        />
-      </TalView>
-      {/* </TalView> */}
-      <InputWithSearchIcon clear={true} />
-      <ScrollView showsVerticalScrollIndicator={false}>
-        {messages.map((x, i) => {
-          return <MessageItem key={i} data={x} />;
-        })}
+      <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
+        <TalView className="px-2 mt-2">
+          <InputWithSearchIcon />
+          <TalView className="mt-3">
+            {messages.map((x, i) => {
+              return <MessageItem key={i} data={x} />;
+            })}
+          </TalView>
+        </TalView>
       </ScrollView>
     </TalView>
   );
